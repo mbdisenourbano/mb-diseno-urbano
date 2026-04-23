@@ -165,7 +165,7 @@ function Hero() {
       <div className="relative container pb-20 pt-40">
         <div className="max-w-3xl">
           <p className="section-label text-[#8A9A5B] mb-6">Evaluación Normativa. Factibilidad. Destrabe de Proyectos.</p>
-          <h1 className="font-['Anek_Devanagari'] text-5xl md:text-7xl font-400 text-white leading-[1.05] mb-8">
+          <h1 className="font-['Anek_Devanagari'] text-4xl md:text-5xl font-400 text-white leading-[1.05] mb-8">
             Tu proyecto está<br />
             <em className="italic">detenido por normativa</em>
           </h1>
