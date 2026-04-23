@@ -525,11 +525,11 @@ function SobreMi() {
 
             <p className="font-['DM_Sans'] text-sm font-300 text-[#3A3A3A] leading-relaxed mb-6">
               <strong className="font-500">10+ años</strong> interpretando normativa compleja. <strong className="font-500">50+ proyectos</strong> desbloqueados.
-              Experiencia en zonas rurales, subdivisiones, conflictos regulatorios. Relación directa con autoridades (municipalidades, SEREMI, GORE).
+              Experiencia en zonas rurales, subdivisiones, conflictos regulatorios. Relación directa con autoridades (municipalidades, SECPLA, SAG, SEREMI MINVU, MINAGRI).
             </p>
 
             <p className="font-['DM_Sans'] text-sm font-300 text-[#3A3A3A] leading-relaxed">
-              <strong className="font-500">Especialización:</strong> Evaluación normativa (PRC, PRMS, OGUC, leyes especiales). Destrabe de proyectos detenidos.
+              <strong className="font-500">Especialización:</strong> Evaluación normativa (PRSBCS, PRC, PRMS, OGUC, leyes especiales). Destrabe de proyectos detenidos.
               Gestión institucional. Contextos complejos.
             </p>
           </FadeBox>
