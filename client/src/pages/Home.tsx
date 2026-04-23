@@ -8,7 +8,8 @@ import { useEffect, useRef, useState } from "react";
 import { Mail, Phone, MapPin, ArrowRight, Menu, X } from "lucide-react";
 
 // ─── Image URLs ────────────────────────────────────────────────────────────────
-const LOGO = "/manus-storage/logo_mb_d0d02ff8.png";
+const LOGO_WHITE = "/manus-storage/logo_mb_d0d02ff8.png";
+const LOGO_BLACK = "/manus-storage/logo_mb_black_0cdc6a1c.png";
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663589322188/7nMPGwPPB7PYAMQiJH4cxH/hero_bg-dxN2NH3PD2UjnEzYEb38bp.webp";
 const IMG_BICENTENARIO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663589322188/7nMPGwPPB7PYAMQiJH4cxH/proyecto_bicentenario-FJNAe5StvyWHTcpPio6zRY.webp";
 const IMG_PARQUE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663589322188/7nMPGwPPB7PYAMQiJH4cxH/proyecto_parque-k4ja9Dxfe3NmB5bV88ZopQ.webp";
@@ -50,13 +51,17 @@ function FadeBox({ children, className = "", delay = 0 }: { children: React.Reac
   );
 }
 
-// ─── Navbar ────────────────────────────────────────────────────────────────────
+// ─── Navbar ────────────────────────────────────────────────────────────────
 function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [inHero, setInHero] = useState(true);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40);
+      setInHero(window.scrollY < 100);
+    };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -86,8 +91,15 @@ function Navbar() {
           onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
           className="flex items-center gap-2 group"
         >
-          <img src={LOGO} alt="MB Logo" className="h-10 w-auto" />
-          <span className="font-['Anek_Devanagari'] text-sm font-600 tracking-[0.08em] uppercase text-[#B8D946] group-hover:text-[#A0C000] transition-colors duration-300">Urbano</span>
+          <img src={inHero ? LOGO_WHITE : LOGO_BLACK} alt="MB Logo" className="h-10 w-auto transition-all duration-300" />
+          <div className="flex flex-col leading-none">
+            <span className={`font-['Anek_Devanagari'] text-[10px] font-600 tracking-[0.08em] uppercase transition-colors duration-300 ${
+              inHero ? "text-white" : "text-[#1C1C1C]"
+            }`}>
+              Diseño
+            </span>
+            <span className="font-['Anek_Devanagari'] text-sm font-600 tracking-[0.08em] uppercase text-[#B8D946] group-hover:text-[#A0C000] transition-colors duration-300">Urbano</span>
+          </div>
         </a>
 
         {/* Desktop nav */}
@@ -96,7 +108,9 @@ function Navbar() {
             <button
               key={l.href}
               onClick={() => handleNav(l.href)}
-              className="font-['DM_Sans'] text-xs font-400 tracking-[0.1em] uppercase text-white hover:text-[#B8D946] transition-colors duration-200"
+              className={`font-['DM_Sans'] text-xs font-400 tracking-[0.1em] uppercase transition-colors duration-200 ${
+                inHero ? "text-white hover:text-[#B8D946]" : "text-[#1C1C1C] hover:text-[#8A9A5B]"
+              }`}
             >
               {l.label}
             </button>
@@ -105,7 +119,9 @@ function Navbar() {
 
         {/* Mobile menu toggle */}
         <button
-          className="md:hidden text-[#1C1C1C] hover:text-[#8A9A5B] transition-colors"
+          className={`md:hidden transition-colors ${
+            inHero ? "text-white hover:text-[#B8D946]" : "text-[#1C1C1C] hover:text-[#8A9A5B]"
+          }`}
           onClick={() => setOpen(!open)}
           aria-label="Menú"
         >
@@ -527,6 +543,19 @@ function Contacto() {
                 </div>
                 <p className="font-['DM_Sans'] text-sm font-300 text-[#3A3A3A]">El Totoral, El Quisco<br />Región de Valparaíso, Chile</p>
               </div>
+              <div>
+                <div className="flex items-center gap-2 mb-3">
+                  <p className="section-label">LinkedIn</p>
+                </div>
+                <a
+                  href="https://www.linkedin.com/in/miguelmezabuzeta/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-['DM_Sans'] text-sm font-300 text-[#3A3A3A] hover:text-[#8A9A5B] transition-colors"
+                >
+                  Miguel Meza Buzeta
+                </a>
+              </div>
             </div>
 
             {/* Contact form */}
@@ -587,10 +616,8 @@ function Footer() {
       <div className="container">
         <hr className="border-t border-white/10 mb-8" />
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className="w-6 h-6 rounded-full border border-white/40 flex items-center justify-center">
-              <span className="font-['Anek_Devanagari'] text-[9px] text-white/60">MB</span>
-            </div>
+            <div className="flex items-center gap-3">
+            <img src={LOGO_BLACK} alt="MB Logo" className="h-6 w-auto" />
             <span className="font-['DM_Sans'] text-xs font-300 tracking-[0.1em] uppercase text-white/40">
               MB Diseño Urbano
             </span>
