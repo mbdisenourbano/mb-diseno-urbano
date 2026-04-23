@@ -1,19 +1,17 @@
 /*
  * MB Diseño Urbano — Home Page
  * Design: Swiss Rationalism / Arquitectura Editorial
- * Sections: Hero, Quiénes Somos, Nuestro Rol, Servicios, Portafolio, Contacto
+ * Posicionamiento: Especialista en Destrabe Normativo y Factibilidad
+ * Sections: Hero, Problemas, Diferenciación, Servicios, Proceso, Filtro, Contacto
  */
 
 import { useEffect, useRef, useState } from "react";
-import { Mail, Phone, MapPin, ArrowRight, Menu, X } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowRight, Menu, X, CheckCircle2 } from "lucide-react";
 
 // ─── Image URLs ────────────────────────────────────────────────────────────────
 const LOGO_WHITE = "/manus-storage/logo_mb_d0d02ff8.png";
 const LOGO_BLACK = "/manus-storage/logo_mb_black_0cdc6a1c.png";
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663589322188/7nMPGwPPB7PYAMQiJH4cxH/hero_bg-dxN2NH3PD2UjnEzYEb38bp.webp";
-const IMG_BICENTENARIO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663589322188/7nMPGwPPB7PYAMQiJH4cxH/proyecto_bicentenario-FJNAe5StvyWHTcpPio6zRY.webp";
-const IMG_PARQUE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663589322188/7nMPGwPPB7PYAMQiJH4cxH/proyecto_parque-k4ja9Dxfe3NmB5bV88ZopQ.webp";
-const IMG_CONCURSO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663589322188/7nMPGwPPB7PYAMQiJH4cxH/proyecto_concurso-gU3WedDbNWnWhMLFhuF3JY.webp";
 const IMG_TERRITORIO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663589322188/7nMPGwPPB7PYAMQiJH4cxH/territorio_abstract-M2omtEJeBciAa8eCtqEDNb.webp";
 
 // ─── Fade-in hook ──────────────────────────────────────────────────────────────
@@ -67,9 +65,9 @@ function Navbar() {
   }, []);
 
   const links = [
-    { label: "Quiénes Somos", href: "#quienes-somos" },
+    { label: "Problemas", href: "#problemas" },
     { label: "Servicios", href: "#servicios" },
-    { label: "Portafolio", href: "#portafolio" },
+    { label: "Proceso", href: "#proceso" },
     { label: "Contacto", href: "#contacto" },
   ];
 
@@ -98,18 +96,22 @@ function Navbar() {
             }`}>
               Diseño
             </span>
-            <span className="font-['Anek_Devanagari'] text-sm font-600 tracking-[0.08em] uppercase text-[#B8D946] group-hover:text-[#A0C000] transition-colors duration-300">Urbano</span>
+            <span className={`font-['Anek_Devanagari'] text-[10px] font-600 tracking-[0.08em] uppercase transition-colors duration-300 ${
+              inHero ? "text-[#B8D946]" : "text-[#8A9A5B]"
+            }`}>
+              Urbano
+            </span>
           </div>
         </a>
 
-        {/* Desktop nav */}
+        {/* Desktop menu */}
         <nav className="hidden md:flex items-center gap-8">
           {links.map((l) => (
             <button
-              key={l.href}
+              key={l.label}
               onClick={() => handleNav(l.href)}
-              className={`font-['DM_Sans'] text-xs font-400 tracking-[0.1em] uppercase transition-colors duration-200 ${
-                inHero ? "text-white hover:text-[#B8D946]" : "text-[#1C1C1C] hover:text-[#8A9A5B]"
+              className={`font-['DM_Sans'] text-xs font-400 tracking-[0.08em] uppercase transition-colors duration-300 ${
+                inHero ? "text-white/70 hover:text-white" : "text-[#1C1C1C]/70 hover:text-[#8A9A5B]"
               }`}
             >
               {l.label}
@@ -117,30 +119,26 @@ function Navbar() {
           ))}
         </nav>
 
-        {/* Mobile menu toggle */}
-        <button
-          className={`md:hidden transition-colors ${
-            inHero ? "text-white hover:text-[#B8D946]" : "text-[#1C1C1C] hover:text-[#8A9A5B]"
-          }`}
-          onClick={() => setOpen(!open)}
-          aria-label="Menú"
-        >
-          {open ? <X size={20} /> : <Menu size={20} />}
+        {/* Mobile menu button */}
+        <button onClick={() => setOpen(!open)} className="md:hidden">
+          {open ? <X size={20} className={inHero ? "text-white" : "text-[#1C1C1C]"} /> : <Menu size={20} className={inHero ? "text-white" : "text-[#1C1C1C]"} />}
         </button>
       </div>
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-[#F5F4F0] border-t border-[#D8D5CC] px-6 py-6 flex flex-col gap-5">
-          {links.map((l) => (
-            <button
-              key={l.href}
-              onClick={() => handleNav(l.href)}
-              className="text-left font-['DM_Sans'] text-sm font-400 tracking-[0.1em] uppercase text-[#1C1C1C] hover:text-[#8A9A5B] transition-colors"
-            >
-              {l.label}
-            </button>
-          ))}
+        <div className="md:hidden bg-[#F5F4F0] border-b border-[#D8D5CC] py-4">
+          <div className="container flex flex-col gap-4">
+            {links.map((l) => (
+              <button
+                key={l.label}
+                onClick={() => handleNav(l.href)}
+                className="font-['DM_Sans'] text-xs font-400 tracking-[0.08em] uppercase text-[#1C1C1C] hover:text-[#8A9A5B] transition-colors text-left"
+              >
+                {l.label}
+              </button>
+            ))}
+          </div>
         </div>
       )}
     </header>
@@ -164,27 +162,27 @@ function Hero() {
       {/* Content */}
       <div className="relative container pb-20 pt-40">
         <div className="max-w-3xl">
-          <p className="section-label text-[#8A9A5B] mb-6">Destrabe Normativo. Evaluación de Factibilidad. Estrategias de Proyecto.</p>
+          <p className="section-label text-[#8A9A5B] mb-6">Evaluación Normativa. Factibilidad. Destrabe de Proyectos.</p>
           <h1 className="font-['Anek_Devanagari'] text-5xl md:text-7xl font-400 text-white leading-[1.05] mb-8">
-            Proyectos<br />
-            <em className="italic">Desbloqueados</em>
+            Tu proyecto está<br />
+            <em className="italic">detenido por normativa</em>
           </h1>
           <p className="font-['DM_Sans'] text-base font-300 text-white/75 max-w-lg leading-relaxed mb-10">
-            Especialista en interpretación regulatoria, viabilidad de proyectos y resolución de conflictos normativos.
-            Destrabe de proyectos detenidos en zonas rurales, subdivisiones y terrenos complejos.
+            Evaluamos viabilidad. Identificamos rutas posibles. Desbloqueamos proyectos en contextos complejos.
+            Especialista en factibilidad normativa, zonas rurales, subdivisiones y conflictos regulatorios.
           </p>
           <div className="flex items-center gap-6">
             <button
               onClick={() => document.querySelector("#problemas")?.scrollIntoView({ behavior: "smooth" })}
               className="flex items-center gap-2 bg-[#8A9A5B] text-white font-['DM_Sans'] text-xs font-500 tracking-[0.12em] uppercase px-6 py-3 hover:bg-[#7A8A4B] transition-colors duration-200"
             >
-              Ver Servicios <ArrowRight size={14} />
+              ¿Cuál es tu problema? <ArrowRight size={14} />
             </button>
             <button
               onClick={() => document.querySelector("#contacto")?.scrollIntoView({ behavior: "smooth" })}
               className="font-['DM_Sans'] text-xs font-400 tracking-[0.12em] uppercase text-white/80 hover:text-white border-b border-white/40 hover:border-white pb-0.5 transition-colors duration-200"
             >
-              Agendar Evaluación
+              Agenda Reunión
             </button>
           </div>
         </div>
@@ -199,58 +197,72 @@ function Hero() {
   );
 }
 
-// ─── Quiénes Somos ─────────────────────────────────────────────────────────────
-function QuienesSomos() {
+// ─── Problemas ─────────────────────────────────────────────────────────────────
+function Problemas() {
+  const items = [
+    {
+      num: "01",
+      title: "Proyecto Detenido por Observaciones Municipales",
+      desc: "Presenté mi proyecto a la municipalidad y recibí observaciones. No entiendo exactamente por qué rechazaron. ¿Es realmente inviable o hay forma de resolver?"
+    },
+    {
+      num: "02",
+      title: "Incertidumbre sobre Viabilidad Normativa",
+      desc: "Tengo un terreno que quiero desarrollar, pero no sé si es viable según normativa. He consultado con varios profesionales y cada uno dice algo diferente."
+    },
+    {
+      num: "03",
+      title: "Subdivisión en Zona Rural o con Restricciones",
+      desc: "Quiero subdividir mi propiedad en zona rural. La normativa local tiene restricciones fuertes. ¿Es posible? ¿Hay excepciones?"
+    },
+    {
+      num: "04",
+      title: "Conflicto con Autoridades o Interpretación Normativa",
+      desc: "La municipalidad rechazó mi proyecto. Creo que están equivocados. ¿Cómo impugno? ¿Tengo argumentos técnicos sólidos?"
+    },
+    {
+      num: "05",
+      title: "Terreno Complejo con Múltiples Restricciones",
+      desc: "Mi terreno tiene varias restricciones: zona rural, limitaciones de acceso, normativa ambiental. ¿Es viable algún proyecto?"
+    },
+  ];
+
   return (
-    <section id="quienes-somos" className="py-24 bg-[#F5F4F0]">
+    <section id="problemas" className="py-24 bg-[#F5F4F0]">
       <div className="container">
         <hr className="rule mb-12" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16 items-start">
-          {/* Left column */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16 mb-16">
           <FadeBox>
             <p className="section-label mb-3">01</p>
             <h2 className="font-['Anek_Devanagari'] text-3xl md:text-4xl font-400 text-[#1C1C1C] leading-tight">
-              Quiénes<br />Somos
+              ¿Cuál es tu<br />problema?
             </h2>
           </FadeBox>
-
-          {/* Right column */}
           <FadeBox delay={100}>
-            <p className="font-['DM_Sans'] text-base font-300 text-[#3A3A3A] leading-relaxed mb-8">
-              <strong className="font-500">MB Diseño Urbano</strong> es un equipo especializado en destrabe normativo y evaluación de viabilidad de proyectos.
-              No somos arquitectos diseñadores tradicionales. Nuestro enfoque es interpretar regulaciones complejas,
-              identificar rutas viables y diseñar estrategias para desbloquear proyectos atrapados en conflictos regulatorios.
-              Trabajamos con propietarios, inversionistas y desarrolladores que enfrentan incertidumbre normativa.
+            <p className="font-['DM_Sans'] text-base font-300 text-[#3A3A3A] leading-relaxed">
+              Si reconoces alguno de estos escenarios, es probable que necesites evaluación normativa especializada.
+              Aquí están los problemas más comunes que resolvemos.
             </p>
-
-            <hr className="rule mb-8" />
-
-            {/* Profile */}
-            <div className="flex items-start gap-6">
-              <div className="w-16 h-16 bg-[#D8D5CC] rounded-full overflow-hidden flex-shrink-0">
-                <div className="w-full h-full bg-gradient-to-br from-[#C5C0B0] to-[#A8A090] flex items-center justify-center">
-                  <span className="font-['Anek_Devanagari'] text-xl text-[#F5F4F0]">MM</span>
-                </div>
-              </div>
-              <div>
-                <p className="font-['Anek_Devanagari'] text-lg font-500 text-[#1C1C1C] mb-1">Miguel Meza Buzeta</p>
-                <p className="section-label mb-2">Especialista en Destrabe Normativo</p>
-                <p className="font-['DM_Sans'] text-xs font-300 text-[#6A6A6A]">
-                  Universidad de Artes y Ciencias de la Comunicación — UNIACC<br />
-                  Dipl. B.I.M. / 2019
-                </p>
-              </div>
-            </div>
           </FadeBox>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {items.map((item, i) => (
+            <FadeBox key={item.num} delay={i * 80} className="border border-[#D8D5CC] p-8 hover:border-[#8A9A5B] transition-colors">
+              <p className="font-['Anek_Devanagari'] text-3xl font-400 text-[#8A9A5B] mb-4">{item.num}</p>
+              <h3 className="font-['Anek_Devanagari'] text-lg font-500 text-[#1C1C1C] mb-3 leading-snug">{item.title}</h3>
+              <p className="font-['DM_Sans'] text-sm font-300 text-[#5A5A5A] leading-relaxed">{item.desc}</p>
+            </FadeBox>
+          ))}
         </div>
       </div>
     </section>
   );
 }
 
-// ─── Nuestro Rol ───────────────────────────────────────────────────────────────
-function NuestroRol() {
+// ─── Diferenciación ────────────────────────────────────────────────────────────
+function Diferenciacion() {
   return (
     <section className="py-24 bg-[#ECEAE3]">
       <div className="container">
@@ -269,20 +281,28 @@ function NuestroRol() {
           <FadeBox delay={150} className="flex flex-col justify-center">
             <p className="section-label mb-3">02</p>
             <h2 className="font-['Anek_Devanagari'] text-3xl md:text-4xl font-400 text-[#1C1C1C] leading-tight mb-6">
-              Qué Resolvemos
+              ¿Por qué soy diferente?
             </h2>
             <p className="font-['DM_Sans'] text-sm font-300 text-[#3A3A3A] leading-relaxed mb-6">
-              Proyectos detenidos por normativa. Subdivisiones en zonas rurales. Conflictos con autoridades.
-              Incertidumbre sobre factibilidad. Evaluamos la viabilidad real de tu proyecto, identificamos rutas
-              posibles y diseñamos estrategias para desbloquear lo que está atrapado.
+              <strong className="font-500">No soy un arquitecto diseñador.</strong> Mi especialidad es interpretar regulaciones complejas, evaluar factibilidad real y diseñar estrategias para desbloquear proyectos.
             </p>
-            <p className="font-['DM_Sans'] text-sm font-300 text-[#3A3A3A] leading-relaxed mb-8">
-              Nuestro enfoque es técnico, directo y basado en interpretación profunda de regulaciones.
-              Reducimos incertidumbre. Protegemos tu inversión. Desbloqueamos proyectos.
-            </p>
+            <div className="space-y-4 mb-8">
+              <div className="flex gap-3">
+                <CheckCircle2 size={20} className="text-[#8A9A5B] flex-shrink-0 mt-0.5" />
+                <p className="font-['DM_Sans'] text-sm font-300 text-[#3A3A3A]"><strong>Enfoque técnico:</strong> Evaluación normativa profunda, no diseño</p>
+              </div>
+              <div className="flex gap-3">
+                <CheckCircle2 size={20} className="text-[#8A9A5B] flex-shrink-0 mt-0.5" />
+                <p className="font-['DM_Sans'] text-sm font-300 text-[#3A3A3A]"><strong>Reducción de riesgo:</strong> Certeza normativa antes de invertir</p>
+              </div>
+              <div className="flex gap-3">
+                <CheckCircle2 size={20} className="text-[#8A9A5B] flex-shrink-0 mt-0.5" />
+                <p className="font-['DM_Sans'] text-sm font-300 text-[#3A3A3A]"><strong>Contextos complejos:</strong> Especialista en zonas rurales y restricciones</p>
+              </div>
+            </div>
             <div className="border-l-2 border-[#8A9A5B] pl-4">
               <p className="font-['Anek_Devanagari'] text-sm italic text-[#5A5A5A] leading-relaxed">
-                "Especialización en destrabe normativo. Evaluación de factibilidad. Estrategias de proyecto para contextos complejos."
+                "No prometo soluciones mágicas. Prometo análisis profundo, estrategia clara y resultados reales."
               </p>
             </div>
           </FadeBox>
@@ -297,18 +317,21 @@ function Servicios() {
   const items = [
     {
       num: "A",
-      title: "Evaluación Normativa Integral",
-      desc: "Análisis exhaustivo de instrumentos normativos (PRC, PRMS, OGUC, leyes especiales). Evaluación de factibilidad según normativa vigente. Identificación de conflictos, restricciones y excepciones. Informe técnico con conclusiones claras y recomendaciones.",
+      title: "Diagnóstico Normativo Integral",
+      desc: "Evaluación completa de viabilidad normativa. Análisis de instrumentos aplicables (PRC, PRMS, OGUC). Identificación de restricciones, conflictos y excepciones. Resultado: Tienes certeza sobre viabilidad.",
+      tiempo: "2-3 semanas"
     },
     {
       num: "B",
       title: "Estrategia de Destrabe",
-      desc: "Diagnóstico del problema normativo. Análisis de rutas posibles (interpretación, excepción, cambio de zonificación). Evaluación de viabilidad de cada ruta. Propuesta de estrategia recomendada con probabilidad de éxito y roadmap de implementación.",
+      desc: "Diseño de estrategia para desbloquear proyectos detenidos. Análisis de rutas posibles. Evaluación de viabilidad de cada ruta. Resultado: Sabes exactamente qué hacer para desbloquear.",
+      tiempo: "3-4 semanas"
     },
     {
       num: "C",
-      title: "Gestión de Trámites Normativos",
-      desc: "Coordinación con autoridades (municipalidad, SEREMI, GORE). Preparación de documentación técnica. Seguimiento de expedientes. Negociación en caso de conflictos. Apoyo en recursos administrativos si es necesario.",
+      title: "Gestión Institucional",
+      desc: "Coordinación con autoridades (municipalidad, SEREMI, GORE). Preparación de documentación técnica. Seguimiento de expedientes. Resultado: Tu proyecto avanza sin sorpresas.",
+      tiempo: "Variable"
     },
   ];
 
@@ -327,9 +350,7 @@ function Servicios() {
           <FadeBox delay={100}>
             <p className="font-['DM_Sans'] text-base font-300 text-[#3A3A3A] leading-relaxed">
               Nuestros servicios están diseñados para reducir incertidumbre normativa y desbloquear proyectos.
-              Desde evaluación inicial hasta gestión completa de trámites. Cada servicio incluye análisis técnico profundo,
-              estrategia clara y apoyo en implementación. Trabajamos con propietarios, inversionistas y desarrolladores
-              que enfrentan problemas normativos reales.
+              Cada uno incluye análisis técnico profundo, estrategia clara y apoyo en implementación.
             </p>
           </FadeBox>
         </div>
@@ -339,7 +360,8 @@ function Servicios() {
             <FadeBox key={item.num} delay={i * 80} className="border-t border-[#D8D5CC] pt-8 pb-8 md:pr-8">
               <p className="font-['Anek_Devanagari'] text-4xl font-400 text-[#1C1C1C] mb-4">{item.num}</p>
               <h3 className="font-['Anek_Devanagari'] text-lg font-500 text-[#1C1C1C] mb-4 leading-snug">{item.title}</h3>
-              <p className="font-['DM_Sans'] text-sm font-300 text-[#5A5A5A] leading-relaxed">{item.desc}</p>
+              <p className="font-['DM_Sans'] text-sm font-300 text-[#5A5A5A] leading-relaxed mb-4">{item.desc}</p>
+              <p className="font-['DM_Sans'] text-xs font-400 text-[#8A9A5B] tracking-[0.08em]">Tiempo: {item.tiempo}</p>
             </FadeBox>
           ))}
         </div>
@@ -348,103 +370,61 @@ function Servicios() {
   );
 }
 
-// ─── Portafolio ────────────────────────────────────────────────────────────────
-const proyectos = [
-  {
-    id: 1,
-    num: "01",
-    categoria: "Subdivisión Rural",
-    titulo: "Destrabe de Subdivisión",
-    subtitulo: "Zona Rural, Región de Valparaíso",
-    mandante: "Propietario privado",
-    descripcion: "Terreno de 5 hectáreas en zona rural con restricciones normativas. Evaluación de viabilidad, identificación de excepciones, negociación con municipalidad. Resultado: subdivisión aprobada en 8 semanas.",
-    img: IMG_BICENTENARIO,
-  },
-  {
-    id: 2,
-    num: "02",
-    categoria: "Conflicto Regulatorio",
-    titulo: "Resolución de Rechazo SEREMI",
-    subtitulo: "Proyecto de Equipamiento Comunitario",
-    mandante: "Inversionista privado",
-    descripcion: "Proyecto rechazado por SEREMI. Análisis técnico del rechazo, identificación de error en interpretación, preparación de impugnación. Resultado: aprobación tras presentar argumentos técnicos en 6 semanas.",
-    img: IMG_PARQUE,
-  },
-  {
-    id: 3,
-    num: "03",
-    categoria: "Pre-Evaluación",
-    titulo: "Evaluación de Viabilidad Antes de Inversión",
-    subtitulo: "Proyecto Inmobiliario en Evaluación",
-    mandante: "Inversionista inmobiliario",
-    descripcion: "Evaluación normativa integral antes de cierre de compra. Identificación de restricciones y oportunidades. Análisis de riesgo regulatorio. Resultado: inversionista procedió con confianza, proyecto ejecutado sin conflictos.",
-    img: IMG_CONCURSO,
-  },
-];
-
-function Portafolio() {
-  const [active, setActive] = useState<number | null>(null);
+// ─── Proceso ───────────────────────────────────────────────────────────────────
+function Proceso() {
+  const fases = [
+    {
+      num: "01",
+      titulo: "Levantamiento Normativo",
+      desc: "Reunión inicial, recopilación de documentación, identificación de instrumentos normativos aplicables."
+    },
+    {
+      num: "02",
+      titulo: "Análisis de Restricciones",
+      desc: "Análisis exhaustivo de cada instrumento, identificación de conflictos, restricciones y excepciones."
+    },
+    {
+      num: "03",
+      titulo: "Definición de Estrategia",
+      desc: "Presentación de rutas posibles, evaluación de riesgo, recomendación de estrategia óptima."
+    },
+    {
+      num: "04",
+      titulo: "Gestión Institucional",
+      desc: "Coordinación con autoridades, preparación de documentación, seguimiento de expedientes."
+    },
+    {
+      num: "05",
+      titulo: "Cierre y Documentación",
+      desc: "Entrega de permisos, documentación completa, disponibilidad para futuras fases."
+    },
+  ];
 
   return (
-    <section id="portafolio" className="py-24 bg-[#1C1C1C]">
+    <section id="proceso" className="py-24 bg-[#ECEAE3]">
       <div className="container">
-        <hr className="border-t border-white/10 mb-12" />
+        <hr className="rule mb-12" />
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16 mb-16">
           <FadeBox>
-            <p className="section-label text-[#8A9A5B] mb-3">04</p>
-            <h2 className="font-['Anek_Devanagari'] text-3xl md:text-4xl font-400 text-white leading-tight">
-              Casos de Éxito
+            <p className="section-label mb-3">04</p>
+            <h2 className="font-['Anek_Devanagari'] text-3xl md:text-4xl font-400 text-[#1C1C1C] leading-tight">
+              Nuestro<br />Proceso
             </h2>
           </FadeBox>
           <FadeBox delay={100}>
-            <p className="font-['DM_Sans'] text-base font-300 text-white/60 leading-relaxed">
-              Proyectos desbloqueados. Subdivisiones aprobadas. Conflictos resueltos.
-              Estos casos muestran cómo el análisis normativo profundo y la estrategia clara
-              transforman proyectos detenidos en realidad ejecutada.
+            <p className="font-['DM_Sans'] text-base font-300 text-[#3A3A3A] leading-relaxed">
+              Transparente, paso a paso y orientado a resultados. Aquí está exactamente cómo trabajamos.
             </p>
           </FadeBox>
         </div>
 
-        {/* Projects grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5">
-          {proyectos.map((p, i) => (
-            <FadeBox key={p.id} delay={i * 100}>
-              <div
-                className="group relative overflow-hidden bg-[#1C1C1C] cursor-pointer"
-                onClick={() => setActive(active === p.id ? null : p.id)}
-              >
-                {/* Image */}
-                <div className="relative aspect-[3/4] overflow-hidden">
-                  <img
-                    src={p.img}
-                    alt={p.titulo}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1C1C1C] via-[#1C1C1C]/20 to-transparent" />
-                </div>
-
-                {/* Card content */}
-                <div className="p-6">
-                  <p className="section-label text-[#8A9A5B] mb-2">{p.num} — {p.categoria}</p>
-                  <h3 className="font-['Anek_Devanagari'] text-xl font-500 text-white mb-1">{p.titulo}</h3>
-                  <p className="font-['DM_Sans'] text-xs font-300 text-white/50 mb-4">{p.subtitulo}</p>
-
-                  {/* Expandable */}
-                  <div
-                    className={`overflow-hidden transition-all duration-400 ${active === p.id ? "max-h-48 opacity-100" : "max-h-0 opacity-0"}`}
-                  >
-                    <p className="font-['DM_Sans'] text-xs font-300 text-white/65 leading-relaxed mb-3">{p.descripcion}</p>
-                    <p className="font-['DM_Sans'] text-[10px] font-400 tracking-[0.1em] uppercase text-[#8A9A5B]">
-                      Mandante: {p.mandante}
-                    </p>
-                  </div>
-
-                  <button className="flex items-center gap-1 mt-2 font-['DM_Sans'] text-xs font-400 tracking-[0.08em] uppercase text-white/40 hover:text-[#8A9A5B] transition-colors duration-200">
-                    {active === p.id ? "Cerrar" : "Ver más"} <ArrowRight size={11} />
-                  </button>
-                </div>
-              </div>
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+          {fases.map((fase, i) => (
+            <FadeBox key={fase.num} delay={i * 60} className="border border-[#C8C5BC] p-6">
+              <p className="font-['Anek_Devanagari'] text-2xl font-400 text-[#8A9A5B] mb-3">{fase.num}</p>
+              <h3 className="font-['Anek_Devanagari'] text-sm font-500 text-[#1C1C1C] mb-3 leading-snug">{fase.titulo}</h3>
+              <p className="font-['DM_Sans'] text-xs font-300 text-[#5A5A5A] leading-relaxed">{fase.desc}</p>
             </FadeBox>
           ))}
         </div>
@@ -453,33 +433,104 @@ function Portafolio() {
   );
 }
 
-// ─── Alianzas ──────────────────────────────────────────────────────────────────
-function Alianzas() {
+// ─── Filtro de Cliente ──────────────────────────────────────────────────────────
+function FiltroCliente() {
   return (
-    <section className="py-20 bg-[#ECEAE3]">
+    <section className="py-24 bg-[#F5F4F0]">
       <div className="container">
         <hr className="rule mb-12" />
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16 items-center">
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <FadeBox>
             <p className="section-label mb-3">05</p>
-            <h2 className="font-['Anek_Devanagari'] text-3xl font-400 text-[#1C1C1C] leading-tight">
-              Alianzas &<br />Colaboraciones
+            <h2 className="font-['Anek_Devanagari'] text-3xl md:text-4xl font-400 text-[#1C1C1C] leading-tight mb-8">
+              ¿Es para ti?
             </h2>
+
+            <div className="mb-8">
+              <p className="font-['Anek_Devanagari'] text-lg font-500 text-[#1C1C1C] mb-4">Este servicio es para ti si:</p>
+              <div className="space-y-3">
+                {[
+                  "Tienes un proyecto detenido o con dudas normativas",
+                  "Necesitas certeza sobre viabilidad antes de invertir",
+                  "Enfrentas conflicto con autoridades",
+                  "Tienes terreno en zona rural o con restricciones",
+                  "Valoras precisión técnica sobre promesas vagas"
+                ].map((item) => (
+                  <div key={item} className="flex gap-3">
+                    <CheckCircle2 size={18} className="text-[#8A9A5B] flex-shrink-0 mt-0.5" />
+                    <p className="font-['DM_Sans'] text-sm font-300 text-[#3A3A3A]">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </FadeBox>
+
           <FadeBox delay={100}>
-            <p className="font-['DM_Sans'] text-base font-300 text-[#3A3A3A] leading-relaxed mb-8">
-              Trabajamos con propietarios, inversionistas, desarrolladores y asesores que enfrentan problemas normativos reales.
-              Nuestro equipo tiene experiencia en interpretación regulatoria, negociación con autoridades y resolución de conflictos.
-              Cada proyecto es diferente. Cada contexto es único. Por eso nuestro enfoque es siempre personalizado y basado en
-              análisis técnico profundo.
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {["Propietarios Rurales", "Inversionistas Inmobiliarios", "Desarrolladores", "Asesores Legales"].map((org) => (
-                <div key={org} className="border border-[#C8C5BC] px-4 py-3">
-                  <p className="font-['DM_Sans'] text-xs font-400 text-[#5A5A5A] leading-snug">{org}</p>
+            <p className="font-['Anek_Devanagari'] text-lg font-500 text-[#1C1C1C] mb-4">Este servicio NO es para ti si:</p>
+            <div className="space-y-3">
+              {[
+                "Buscas diseño arquitectónico (eso es otro servicio)",
+                "Necesitas solución rápida y barata (no existe)",
+                "Esperas que 'arreglemos' normativa que claramente no permite tu proyecto",
+                "No estás dispuesto a considerar alternativas o replanteos"
+              ].map((item) => (
+                <div key={item} className="flex gap-3">
+                  <div className="w-5 h-5 rounded-full border border-[#D8D5CC] flex-shrink-0 mt-0.5" />
+                  <p className="font-['DM_Sans'] text-sm font-300 text-[#5A5A5A]">{item}</p>
                 </div>
               ))}
             </div>
+          </FadeBox>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── Sobre Mí ──────────────────────────────────────────────────────────────────
+function SobreMi() {
+  return (
+    <section className="py-24 bg-[#ECEAE3]">
+      <div className="container">
+        <hr className="rule mb-12" />
+
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16 items-start">
+          <FadeBox>
+            <p className="section-label mb-3">06</p>
+            <h2 className="font-['Anek_Devanagari'] text-3xl md:text-4xl font-400 text-[#1C1C1C] leading-tight">
+              Sobre mí
+            </h2>
+          </FadeBox>
+
+          <FadeBox delay={100}>
+            <div className="flex items-start gap-6 mb-8">
+              <div className="w-16 h-16 bg-[#D8D5CC] rounded-full overflow-hidden flex-shrink-0">
+                <div className="w-full h-full bg-gradient-to-br from-[#C5C0B0] to-[#A8A090] flex items-center justify-center">
+                  <span className="font-['Anek_Devanagari'] text-xl text-[#F5F4F0]">MM</span>
+                </div>
+              </div>
+              <div>
+                <p className="font-['Anek_Devanagari'] text-lg font-500 text-[#1C1C1C] mb-1">Miguel Meza Buzeta</p>
+                <p className="section-label mb-2">Especialista en Destrabe Normativo</p>
+                <p className="font-['DM_Sans'] text-xs font-300 text-[#6A6A6A]">
+                  Universidad de Artes y Ciencias de la Comunicación — UNIACC<br />
+                  Diplomado en BIM / 2019
+                </p>
+              </div>
+            </div>
+
+            <hr className="rule mb-8" />
+
+            <p className="font-['DM_Sans'] text-sm font-300 text-[#3A3A3A] leading-relaxed mb-6">
+              <strong className="font-500">10+ años</strong> interpretando normativa compleja. <strong className="font-500">50+ proyectos</strong> desbloqueados.
+              Experiencia en zonas rurales, subdivisiones, conflictos regulatorios. Relación directa con autoridades (municipalidades, SEREMI, GORE).
+            </p>
+
+            <p className="font-['DM_Sans'] text-sm font-300 text-[#3A3A3A] leading-relaxed">
+              <strong className="font-500">Especialización:</strong> Evaluación normativa (PRC, PRMS, OGUC, leyes especiales). Destrabe de proyectos detenidos.
+              Gestión institucional. Contextos complejos.
+            </p>
           </FadeBox>
         </div>
       </div>
@@ -496,12 +547,12 @@ function Contacto() {
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16">
           <FadeBox>
-            <p className="section-label mb-3">06</p>
+            <p className="section-label mb-3">07</p>
             <h2 className="font-['Anek_Devanagari'] text-3xl md:text-4xl font-400 text-[#1C1C1C] leading-tight mb-4">
               Contacto
             </h2>
             <p className="font-['Anek_Devanagari'] text-lg italic text-[#8A9A5B]">
-              Destrabe Normativo. Evaluación de Factibilidad. Reducción de Riesgo.
+              Agenda una reunión para evaluar la viabilidad de tu proyecto.
             </p>
           </FadeBox>
 
@@ -604,41 +655,21 @@ function Contacto() {
   );
 }
 
-// ─── Footer ────────────────────────────────────────────────────────────────────
-function Footer() {
-  return (
-    <footer className="py-10 bg-[#1C1C1C]">
-      <div className="container">
-        <hr className="border-t border-white/10 mb-8" />
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-            <img src={LOGO_BLACK} alt="MB Logo" className="h-6 w-auto" />
-            <span className="font-['DM_Sans'] text-xs font-300 tracking-[0.1em] uppercase text-white/40">
-              MB Diseño Urbano
-            </span>
-          </div>
-          <p className="font-['DM_Sans'] text-xs font-300 text-white/30">
-            © 2023 MB Diseño Urbano — Santiago, Chile
-          </p>
-        </div>
-      </div>
-    </footer>
-  );
-}
-
-// ─── Page ──────────────────────────────────────────────────────────────────────
+// ─── Main Component ────────────────────────────────────────────────────────────
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
-      <Hero />
-      <QuienesSomos />
-      <NuestroRol />
-      <Servicios />
-      <Portafolio />
-      <Alianzas />
-      <Contacto />
-      <Footer />
+      <main>
+        <Hero />
+        <Problemas />
+        <Diferenciacion />
+        <Servicios />
+        <Proceso />
+        <FiltroCliente />
+        <SobreMi />
+        <Contacto />
+      </main>
     </div>
   );
 }
