@@ -86,7 +86,7 @@ function Navbar() {
           className="flex items-center gap-3 group"
         >
           <div className="w-8 h-8 rounded-full border-2 border-[#1C1C1C] flex items-center justify-center group-hover:border-[#8A9A5B] transition-colors duration-300">
-            <span className="font-['Playfair_Display'] text-xs font-600 text-[#1C1C1C] group-hover:text-[#8A9A5B] transition-colors duration-300">MB</span>
+            <span className="font-['Anek_Devanagari'] text-xs font-600 text-[#1C1C1C] group-hover:text-[#8A9A5B] transition-colors duration-300">MB</span>
           </div>
           <div className="flex flex-col leading-none">
             <span className="font-['DM_Sans'] text-xs font-500 tracking-[0.15em] uppercase text-[#1C1C1C]">MB Diseño</span>
@@ -153,7 +153,7 @@ function Hero() {
       <div className="relative container pb-20 pt-40">
         <div className="max-w-3xl">
           <p className="section-label text-[#8A9A5B] mb-6">Planificación y Gestión Territorial</p>
-          <h1 className="font-['Playfair_Display'] text-5xl md:text-7xl font-400 text-white leading-[1.05] mb-8">
+          <h1 className="font-['Anek_Devanagari'] text-5xl md:text-7xl font-400 text-white leading-[1.05] mb-8">
             Diseño<br />
             <em className="italic">Urbano</em>
           </h1>
@@ -198,7 +198,7 @@ function QuienesSomos() {
           {/* Left column */}
           <FadeBox>
             <p className="section-label mb-3">01</p>
-            <h2 className="font-['Playfair_Display'] text-3xl md:text-4xl font-400 text-[#1C1C1C] leading-tight">
+            <h2 className="font-['Anek_Devanagari'] text-3xl md:text-4xl font-400 text-[#1C1C1C] leading-tight">
               Quiénes<br />Somos
             </h2>
           </FadeBox>
@@ -219,11 +219,11 @@ function QuienesSomos() {
             <div className="flex items-start gap-6">
               <div className="w-16 h-16 bg-[#D8D5CC] rounded-full overflow-hidden flex-shrink-0">
                 <div className="w-full h-full bg-gradient-to-br from-[#C5C0B0] to-[#A8A090] flex items-center justify-center">
-                  <span className="font-['Playfair_Display'] text-xl text-[#F5F4F0]">MM</span>
+                  <span className="font-['Anek_Devanagari'] text-xl text-[#F5F4F0]">MM</span>
                 </div>
               </div>
               <div>
-                <p className="font-['Playfair_Display'] text-lg font-500 text-[#1C1C1C] mb-1">Miguel Meza Buzeta</p>
+                <p className="font-['Anek_Devanagari'] text-lg font-500 text-[#1C1C1C] mb-1">Miguel Meza Buzeta</p>
                 <p className="section-label mb-2">Arquitecto / Director</p>
                 <p className="font-['DM_Sans'] text-xs font-300 text-[#6A6A6A]">
                   Universidad de Artes y Ciencias de la Comunicación — UNIACC<br />
@@ -257,7 +257,7 @@ function NuestroRol() {
           {/* Right — text */}
           <FadeBox delay={150} className="flex flex-col justify-center">
             <p className="section-label mb-3">02</p>
-            <h2 className="font-['Playfair_Display'] text-3xl md:text-4xl font-400 text-[#1C1C1C] leading-tight mb-6">
+            <h2 className="font-['Anek_Devanagari'] text-3xl md:text-4xl font-400 text-[#1C1C1C] leading-tight mb-6">
               Nuestro<br />Rol
             </h2>
             <p className="font-['DM_Sans'] text-sm font-300 text-[#3A3A3A] leading-relaxed mb-6">
@@ -271,7 +271,7 @@ function NuestroRol() {
               articular o activar el territorio.
             </p>
             <div className="border-l-2 border-[#8A9A5B] pl-4">
-              <p className="font-['Playfair_Display'] text-sm italic text-[#5A5A5A] leading-relaxed">
+              <p className="font-['Anek_Devanagari'] text-sm italic text-[#5A5A5A] leading-relaxed">
                 "Motor Territorial — una línea de reflexión y análisis que explora
                 la relación entre normativa, territorio y proyecto."
               </p>
@@ -311,7 +311,7 @@ function Servicios() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16 mb-16">
           <FadeBox>
             <p className="section-label mb-3">03</p>
-            <h2 className="font-['Playfair_Display'] text-3xl md:text-4xl font-400 text-[#1C1C1C] leading-tight">
+            <h2 className="font-['Anek_Devanagari'] text-3xl md:text-4xl font-400 text-[#1C1C1C] leading-tight">
               Servicios
             </h2>
           </FadeBox>
@@ -328,8 +328,8 @@ function Servicios() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
           {items.map((item, i) => (
             <FadeBox key={item.num} delay={i * 80} className="border-t border-[#D8D5CC] pt-8 pb-8 md:pr-8">
-              <p className="font-['Playfair_Display'] text-4xl font-400 text-[#D8D5CC] mb-4">{item.num}</p>
-              <h3 className="font-['Playfair_Display'] text-lg font-500 text-[#1C1C1C] mb-4 leading-snug">{item.title}</h3>
+              <p className="font-['Anek_Devanagari'] text-4xl font-400 text-[#D8D5CC] mb-4">{item.num}</p>
+              <h3 className="font-['Anek_Devanagari'] text-lg font-500 text-[#1C1C1C] mb-4 leading-snug">{item.title}</h3>
               <p className="font-['DM_Sans'] text-sm font-300 text-[#5A5A5A] leading-relaxed">{item.desc}</p>
             </FadeBox>
           ))}
@@ -384,7 +384,7 @@ function Portafolio() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16 mb-16">
           <FadeBox>
             <p className="section-label text-[#8A9A5B] mb-3">04</p>
-            <h2 className="font-['Playfair_Display'] text-3xl md:text-4xl font-400 text-white leading-tight">
+            <h2 className="font-['Anek_Devanagari'] text-3xl md:text-4xl font-400 text-white leading-tight">
               Portafolio
             </h2>
           </FadeBox>
@@ -418,7 +418,7 @@ function Portafolio() {
                 {/* Card content */}
                 <div className="p-6">
                   <p className="section-label text-[#8A9A5B] mb-2">{p.num} — {p.categoria}</p>
-                  <h3 className="font-['Playfair_Display'] text-xl font-500 text-white mb-1">{p.titulo}</h3>
+                  <h3 className="font-['Anek_Devanagari'] text-xl font-500 text-white mb-1">{p.titulo}</h3>
                   <p className="font-['DM_Sans'] text-xs font-300 text-white/50 mb-4">{p.subtitulo}</p>
 
                   {/* Expandable */}
@@ -453,7 +453,7 @@ function Alianzas() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16 items-center">
           <FadeBox>
             <p className="section-label mb-3">05</p>
-            <h2 className="font-['Playfair_Display'] text-3xl font-400 text-[#1C1C1C] leading-tight">
+            <h2 className="font-['Anek_Devanagari'] text-3xl font-400 text-[#1C1C1C] leading-tight">
               Alianzas &<br />Colaboraciones
             </h2>
           </FadeBox>
@@ -490,10 +490,10 @@ function Contacto() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16">
           <FadeBox>
             <p className="section-label mb-3">06</p>
-            <h2 className="font-['Playfair_Display'] text-3xl md:text-4xl font-400 text-[#1C1C1C] leading-tight mb-4">
+            <h2 className="font-['Anek_Devanagari'] text-3xl md:text-4xl font-400 text-[#1C1C1C] leading-tight mb-4">
               Contacto
             </h2>
-            <p className="font-['Playfair_Display'] text-lg italic text-[#8A9A5B]">
+            <p className="font-['Anek_Devanagari'] text-lg italic text-[#8A9A5B]">
               Ideas — Estrategias — Soluciones.
             </p>
           </FadeBox>
@@ -593,7 +593,7 @@ function Footer() {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <div className="w-6 h-6 rounded-full border border-white/40 flex items-center justify-center">
-              <span className="font-['Playfair_Display'] text-[9px] text-white/60">MB</span>
+              <span className="font-['Anek_Devanagari'] text-[9px] text-white/60">MB</span>
             </div>
             <span className="font-['DM_Sans'] text-xs font-300 tracking-[0.1em] uppercase text-white/40">
               MB Diseño Urbano

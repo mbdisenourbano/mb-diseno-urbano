@@ -75,7 +75,7 @@
     -moz-osx-font-smoothing: grayscale;
   }
   h1, h2, h3, h4 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Anek Devanagari', sans-serif;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
