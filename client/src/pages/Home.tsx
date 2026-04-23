@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import { Mail, Phone, MapPin, ArrowRight, Menu, X } from "lucide-react";
 
 // ─── Image URLs ────────────────────────────────────────────────────────────────
+const LOGO = "/manus-storage/logo_mb_d0d02ff8.png";
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663589322188/7nMPGwPPB7PYAMQiJH4cxH/hero_bg-dxN2NH3PD2UjnEzYEb38bp.webp";
 const IMG_BICENTENARIO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663589322188/7nMPGwPPB7PYAMQiJH4cxH/proyecto_bicentenario-FJNAe5StvyWHTcpPio6zRY.webp";
 const IMG_PARQUE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663589322188/7nMPGwPPB7PYAMQiJH4cxH/proyecto_parque-k4ja9Dxfe3NmB5bV88ZopQ.webp";
@@ -83,15 +84,10 @@ function Navbar() {
         <a
           href="#"
           onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
-          className="flex items-center gap-3 group"
+          className="flex items-center gap-2 group"
         >
-          <div className="w-8 h-8 rounded-full border-2 border-[#1C1C1C] flex items-center justify-center group-hover:border-[#8A9A5B] transition-colors duration-300">
-            <span className="font-['Anek_Devanagari'] text-xs font-600 text-[#1C1C1C] group-hover:text-[#8A9A5B] transition-colors duration-300">MB</span>
-          </div>
-          <div className="flex flex-col leading-none">
-            <span className="font-['DM_Sans'] text-xs font-500 tracking-[0.15em] uppercase text-[#1C1C1C]">MB Diseño</span>
-            <span className="font-['DM_Sans'] text-[10px] font-300 tracking-[0.12em] uppercase text-[#8A9A5B]">Urbano</span>
-          </div>
+          <img src={LOGO} alt="MB Logo" className="h-10 w-auto" />
+          <span className="font-['Anek_Devanagari'] text-sm font-600 tracking-[0.08em] uppercase text-[#B8D946] group-hover:text-[#A0C000] transition-colors duration-300">Urbano</span>
         </a>
 
         {/* Desktop nav */}
@@ -100,7 +96,7 @@ function Navbar() {
             <button
               key={l.href}
               onClick={() => handleNav(l.href)}
-              className="font-['DM_Sans'] text-xs font-400 tracking-[0.1em] uppercase text-[#4A4A4A] hover:text-[#8A9A5B] transition-colors duration-200"
+              className="font-['DM_Sans'] text-xs font-400 tracking-[0.1em] uppercase text-white hover:text-[#B8D946] transition-colors duration-200"
             >
               {l.label}
             </button>
@@ -328,7 +324,7 @@ function Servicios() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
           {items.map((item, i) => (
             <FadeBox key={item.num} delay={i * 80} className="border-t border-[#D8D5CC] pt-8 pb-8 md:pr-8">
-              <p className="font-['Anek_Devanagari'] text-4xl font-400 text-[#D8D5CC] mb-4">{item.num}</p>
+              <p className="font-['Anek_Devanagari'] text-4xl font-400 text-[#1C1C1C] mb-4">{item.num}</p>
               <h3 className="font-['Anek_Devanagari'] text-lg font-500 text-[#1C1C1C] mb-4 leading-snug">{item.title}</h3>
               <p className="font-['DM_Sans'] text-sm font-300 text-[#5A5A5A] leading-relaxed">{item.desc}</p>
             </FadeBox>
@@ -506,10 +502,10 @@ function Contacto() {
                   <p className="section-label">Correo</p>
                 </div>
                 <a
-                  href="mailto:contacto@mbdisenourbano.cl"
+                  href="mailto:mbduarq@gmail.com"
                   className="font-['DM_Sans'] text-sm font-300 text-[#3A3A3A] hover:text-[#8A9A5B] transition-colors"
                 >
-                  contacto@mbdisenourbano.cl
+                  mbduarq@gmail.com
                 </a>
               </div>
               <div>
@@ -518,10 +514,10 @@ function Contacto() {
                   <p className="section-label">Teléfono</p>
                 </div>
                 <a
-                  href="tel:+56912345678"
+                  href="tel:+56941771443"
                   className="font-['DM_Sans'] text-sm font-300 text-[#3A3A3A] hover:text-[#8A9A5B] transition-colors"
                 >
-                  +56 9 1234 5678
+                  +56 9 4177 1443
                 </a>
               </div>
               <div>
@@ -529,7 +525,7 @@ function Contacto() {
                   <MapPin size={14} className="text-[#8A9A5B]" />
                   <p className="section-label">Ubicación</p>
                 </div>
-                <p className="font-['DM_Sans'] text-sm font-300 text-[#3A3A3A]">Santiago, Chile</p>
+                <p className="font-['DM_Sans'] text-sm font-300 text-[#3A3A3A]">El Totoral, El Quisco<br />Región de Valparaíso, Chile</p>
               </div>
             </div>
 
