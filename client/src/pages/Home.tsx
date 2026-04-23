@@ -6,13 +6,15 @@
  */
 
 import { useEffect, useRef, useState } from "react";
-import { Mail, Phone, MapPin, ArrowRight, Menu, X, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowRight, Menu, X, CheckCircle2, Star } from "lucide-react";
 
 // ─── Image URLs ────────────────────────────────────────────────────────────────
 const LOGO_WHITE = "/manus-storage/logo_mb_d0d02ff8.png";
 const LOGO_BLACK = "/manus-storage/logo_mb_black_0cdc6a1c.png";
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663589322188/7nMPGwPPB7PYAMQiJH4cxH/hero_bg-dxN2NH3PD2UjnEzYEb38bp.webp";
 const IMG_TERRITORIO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663589322188/7nMPGwPPB7PYAMQiJH4cxH/territorio_abstract-M2omtEJeBciAa8eCtqEDNb.webp";
+const CASO_HUALLILEMU = "/manus-storage/CASOHUALLILEMU_6e2fd7aa.webp";
+const CASO_CARDONAL = "/manus-storage/CASOELCARDONAL_92aa9849.png";
 
 // ─── Fade-in hook ──────────────────────────────────────────────────────────────
 function useFadeIn() {
@@ -538,7 +540,143 @@ function SobreMi() {
   );
 }
 
-// ─── Contacto ──────────────────────────────────────────────────────────────────
+// ─── Casos de Éxito ────────────────────────────────────────────────────────────────
+function CasosExito() {
+  const casos = [
+    {
+      num: "01",
+      titulo: "El Cardonal",
+      subtitulo: "Subdivisión Predial para Desarrollo Residencial",
+      desc: "Proyecto de subdivisión en zona con restricciones normativas. Evaluación de factibilidad, identificación de rutas viables, gestión con autoridades municipales.",
+      resultado: "Subdivisión aprobada en 12 semanas",
+      img: CASO_CARDONAL
+    },
+    {
+      num: "02",
+      titulo: "El Totoral",
+      subtitulo: "Uso y Consolidación del Predio",
+      desc: "Análisis de viabilidad para consolidación habitacional con mejoras según normativa vigente. Evaluación de restricciones, definición de estrategia de desarrollo.",
+      resultado: "Proyecto viable con ruta clara de ejecución",
+      img: CASO_HUALLILEMU
+    },
+    {
+      num: "03",
+      titulo: "Huallilemu",
+      subtitulo: "Mediación Institucional Compleja",
+      desc: "Conflicto de interpretación normativa entre SAG, SEREMI MINVU, MINAGRI y DOM. Mediación técnica, análisis de zonificación PRSBCS, resolución de conflicto.",
+      resultado: "Acuerdo institucional alcanzado en 16 semanas",
+      img: CASO_HUALLILEMU
+    }
+  ];
+
+  return (
+    <section id="casos" className="py-24 bg-[#F5F4F0]">
+      <div className="container">
+        <hr className="rule mb-12" />
+
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16 mb-16">
+          <FadeBox>
+            <p className="section-label mb-3">08</p>
+            <h2 className="font-['Anek_Devanagari'] text-3xl md:text-4xl font-400 text-[#1C1C1C] leading-tight">
+              Casos de<br />Éxito
+            </h2>
+          </FadeBox>
+          <FadeBox delay={100}>
+            <p className="font-['DM_Sans'] text-base font-300 text-[#3A3A3A] leading-relaxed">
+              Proyectos desbloqueados. Subdivisiones aprobadas. Conflictos resueltos.
+              Estos casos muestran cómo el análisis normativo profundo y la estrategia clara transforman proyectos detenidos en realidad ejecutada.
+            </p>
+          </FadeBox>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {casos.map((caso, i) => (
+            <FadeBox key={caso.num} delay={i * 100} className="border border-[#D8D5CC] overflow-hidden hover:border-[#8A9A5B] transition-colors">
+              <div className="relative aspect-[3/2] overflow-hidden bg-[#ECEAE3]">
+                <img
+                  src={caso.img}
+                  alt={caso.titulo}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <p className="font-['Anek_Devanagari'] text-2xl font-400 text-[#8A9A5B] mb-2">{caso.num}</p>
+                <h3 className="font-['Anek_Devanagari'] text-lg font-500 text-[#1C1C1C] mb-1">{caso.titulo}</h3>
+                <p className="font-['DM_Sans'] text-xs font-300 text-[#8A9A5B] tracking-[0.08em] uppercase mb-3">{caso.subtitulo}</p>
+                <p className="font-['DM_Sans'] text-sm font-300 text-[#5A5A5A] leading-relaxed mb-4">{caso.desc}</p>
+                <div className="border-t border-[#D8D5CC] pt-4">
+                  <p className="font-['DM_Sans'] text-xs font-400 text-[#1C1C1C]"><strong>Resultado:</strong> {caso.resultado}</p>
+                </div>
+              </div>
+            </FadeBox>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── Testimonios ────────────────────────────────────────────────────────────────
+function Testimonios() {
+  const testimonios = [
+    {
+      nombre: "Carlos Rodríguez",
+      cargo: "Inversionista Inmobiliario",
+      texto: "Tenía un proyecto detenido por normativa. Miguel hizo un análisis profundo y encontró una ruta viable que otros no vieron. Proyecto ejecutado sin conflictos."
+    },
+    {
+      nombre: "Patricia González",
+      cargo: "Propietaria Rural",
+      texto: "No sabía si mi terreno era viable para subdividir. La evaluación normativa fue clara y precisa. Hoy tengo un proyecto aprobado."
+    },
+    {
+      nombre: "Roberto Silva",
+      cargo: "Desarrollador Inmobiliario",
+      texto: "Excelente análisis técnico. Redujeron incertidumbre normativa y nos ahorraron meses de gestión. Muy profesional."
+    }
+  ];
+
+  return (
+    <section className="py-24 bg-[#ECEAE3]">
+      <div className="container">
+        <hr className="rule mb-12" />
+
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16 mb-16">
+          <FadeBox>
+            <p className="section-label mb-3">09</p>
+            <h2 className="font-['Anek_Devanagari'] text-3xl md:text-4xl font-400 text-[#1C1C1C] leading-tight">
+              Lo que dicen<br />nuestros clientes
+            </h2>
+          </FadeBox>
+          <FadeBox delay={100}>
+            <p className="font-['DM_Sans'] text-base font-300 text-[#3A3A3A] leading-relaxed">
+              Clientes que enfrentaban incertidumbre normativa y lograron desbloquear sus proyectos.
+            </p>
+          </FadeBox>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {testimonios.map((test, i) => (
+            <FadeBox key={test.nombre} delay={i * 100} className="border border-[#D8D5CC] p-8 hover:border-[#8A9A5B] transition-colors">
+              <div className="flex gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={14} className="fill-[#8A9A5B] text-[#8A9A5B]" />
+                ))}
+              </div>
+              <p className="font-['DM_Sans'] text-sm font-300 text-[#3A3A3A] leading-relaxed mb-6 italic">"{test.texto}"</p>
+              <div className="border-t border-[#D8D5CC] pt-4">
+                <p className="font-['Anek_Devanagari'] text-sm font-500 text-[#1C1C1C]">{test.nombre}</p>
+                <p className="font-['DM_Sans'] text-xs font-300 text-[#8A9A5B]">{test.cargo}</p>
+              </div>
+            </FadeBox>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── Contacto ────────────────────────────────────────────────────────────────
 function Contacto() {
   return (
     <section id="contacto" className="py-24 bg-[#F5F4F0]">
@@ -655,7 +793,7 @@ function Contacto() {
   );
 }
 
-// ─── Main Component ────────────────────────────────────────────────────────────
+// ─── Main Component ────────────────────────────────────────────────────────────────
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
@@ -668,6 +806,8 @@ export default function Home() {
         <Proceso />
         <FiltroCliente />
         <SobreMi />
+        <CasosExito />
+        <Testimonios />
         <Contacto />
       </main>
     </div>
