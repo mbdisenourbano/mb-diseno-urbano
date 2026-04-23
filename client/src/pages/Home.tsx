@@ -514,10 +514,9 @@ function SobreMi() {
               </div>
               <div>
                 <p className="font-['Anek_Devanagari'] text-lg font-500 text-[#1C1C1C] mb-1">Miguel Meza Buzeta</p>
-                <p className="section-label mb-2">Especialista en Destrabe Normativo</p>
-                <p className="font-['DM_Sans'] text-xs font-300 text-[#6A6A6A]">
-                  Universidad de Artes y Ciencias de la Comunicación — UNIACC<br />
-                  Diplomado en BIM / 2019
+                <p className="font-['DM_Sans'] text-xs font-300 text-[#6A6A6A] mb-2">
+                  Arquitecto Diplomado en BIM (Building Information Modeling) / 2019<br />
+                  Universidad de Artes y Ciencias de la Comunicación — UNIACC
                 </p>
               </div>
             </div>
