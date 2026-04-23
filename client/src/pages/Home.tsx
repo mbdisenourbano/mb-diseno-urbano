@@ -320,19 +320,19 @@ function Servicios() {
     {
       num: "A",
       title: "Diagnóstico Normativo Integral",
-      desc: "Evaluación completa de viabilidad normativa. Análisis de instrumentos aplicables (PRC, PRMS, OGUC). Identificación de restricciones, conflictos y excepciones. Resultado: Tienes certeza sobre viabilidad.",
+      desc: "Evaluación completa de viabilidad normativa. Análisis de instrumentos aplicables (PREMVAL Satélite Borde Costero Sur, PRC, LGUC, OGUC). Identificación de restricciones, conflictos y excepciones. Resultado: Tienes certeza sobre viabilidad.",
       tiempo: "2-3 semanas"
     },
     {
       num: "B",
       title: "Estrategia de Destrabe",
       desc: "Diseño de estrategia para desbloquear proyectos detenidos. Análisis de rutas posibles. Evaluación de viabilidad de cada ruta. Resultado: Sabes exactamente qué hacer para desbloquear.",
-      tiempo: "3-4 semanas"
+      tiempo: "Variable"
     },
     {
       num: "C",
       title: "Gestión Institucional",
-      desc: "Coordinación con autoridades (municipalidad, SEREMI, GORE). Preparación de documentación técnica. Seguimiento de expedientes. Resultado: Tu proyecto avanza sin sorpresas.",
+      desc: "Coordinación con autoridades (Seremi de Vivienda y Urbanismo - SEREMI MINVU, Secretaría Comunal de Planificación - SECPLA, Dirección de Obras Municipales - DOM). Preparación de documentación técnica. Seguimiento de expedientes. Resultado: Tu proyecto avanza sin sorpresas.",
       tiempo: "Variable"
     },
   ];
