@@ -557,7 +557,7 @@ function CasosExito() {
       subtitulo: "Uso y Consolidación del Predio",
       desc: "Análisis de viabilidad para consolidación habitacional con mejoras según normativa vigente. Evaluación de restricciones, definición de estrategia de desarrollo.",
       resultado: "Proyecto viable con ruta clara de ejecución",
-      img: CASO_HUALLILEMU
+      img: null
     },
     {
       num: "03",
@@ -591,15 +591,19 @@ function CasosExito() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {casos.map((caso, i) => (
-            <FadeBox key={caso.num} delay={i * 100} className="border border-[#D8D5CC] overflow-hidden hover:border-[#8A9A5B] transition-colors">
-              <div className="relative aspect-[3/2] overflow-hidden bg-[#ECEAE3]">
-                <img
-                  src={caso.img}
-                  alt={caso.titulo}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
+            <FadeBox key={caso.num} delay={i * 100} className={`border border-[#D8D5CC] overflow-hidden hover:border-[#8A9A5B] transition-colors ${
+              caso.num === "02" ? "" : ""
+            }`}>
+              {caso.num !== "02" && caso.img && (
+                <div className="relative aspect-[3/2] overflow-hidden bg-[#ECEAE3]">
+                  <img
+                    src={caso.img}
+                    alt={caso.titulo}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              )}
+              <div className={`${caso.num === "02" ? "p-6" : "p-6"}`}>
                 <p className="font-['Anek_Devanagari'] text-2xl font-400 text-[#8A9A5B] mb-2">{caso.num}</p>
                 <h3 className="font-['Anek_Devanagari'] text-lg font-500 text-[#1C1C1C] mb-1">{caso.titulo}</h3>
                 <p className="font-['DM_Sans'] text-xs font-300 text-[#8A9A5B] tracking-[0.08em] uppercase mb-3">{caso.subtitulo}</p>
