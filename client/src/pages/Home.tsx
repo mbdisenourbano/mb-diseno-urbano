@@ -164,27 +164,27 @@ function Hero() {
       {/* Content */}
       <div className="relative container pb-20 pt-40">
         <div className="max-w-3xl">
-          <p className="section-label text-[#8A9A5B] mb-6">Planificación y Gestión Territorial</p>
+          <p className="section-label text-[#8A9A5B] mb-6">Destrabe Normativo. Evaluación de Factibilidad. Estrategias de Proyecto.</p>
           <h1 className="font-['Anek_Devanagari'] text-5xl md:text-7xl font-400 text-white leading-[1.05] mb-8">
-            Diseño<br />
-            <em className="italic">Urbano</em>
+            Proyectos<br />
+            <em className="italic">Desbloqueados</em>
           </h1>
           <p className="font-['DM_Sans'] text-base font-300 text-white/75 max-w-lg leading-relaxed mb-10">
-            Oficina dedicada al desarrollo de estudios, consultorías y proyectos urbanos.
-            Comprensión del territorio, articulación entre planificación, normativa y proyecto.
+            Especialista en interpretación regulatoria, viabilidad de proyectos y resolución de conflictos normativos.
+            Destrabe de proyectos detenidos en zonas rurales, subdivisiones y terrenos complejos.
           </p>
           <div className="flex items-center gap-6">
             <button
-              onClick={() => document.querySelector("#portafolio")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() => document.querySelector("#problemas")?.scrollIntoView({ behavior: "smooth" })}
               className="flex items-center gap-2 bg-[#8A9A5B] text-white font-['DM_Sans'] text-xs font-500 tracking-[0.12em] uppercase px-6 py-3 hover:bg-[#7A8A4B] transition-colors duration-200"
             >
-              Ver Portafolio <ArrowRight size={14} />
+              Ver Servicios <ArrowRight size={14} />
             </button>
             <button
               onClick={() => document.querySelector("#contacto")?.scrollIntoView({ behavior: "smooth" })}
               className="font-['DM_Sans'] text-xs font-400 tracking-[0.12em] uppercase text-white/80 hover:text-white border-b border-white/40 hover:border-white pb-0.5 transition-colors duration-200"
             >
-              Contactar
+              Agendar Evaluación
             </button>
           </div>
         </div>
@@ -218,11 +218,10 @@ function QuienesSomos() {
           {/* Right column */}
           <FadeBox delay={100}>
             <p className="font-['DM_Sans'] text-base font-300 text-[#3A3A3A] leading-relaxed mb-8">
-              <strong className="font-500">MB Diseño Urbano</strong> es una oficina dedicada al desarrollo de estudios,
-              consultorías y proyectos urbanos, liderada por Miguel Meza Buzeta, arquitecto.
-              El trabajo se centra en la comprensión del territorio y en la articulación entre
-              planificación, normativa y proyecto. Según la naturaleza de cada encargo se
-              establecen colaboraciones con distintos profesionales y especialistas.
+              <strong className="font-500">MB Diseño Urbano</strong> es un equipo especializado en destrabe normativo y evaluación de viabilidad de proyectos.
+              No somos arquitectos diseñadores tradicionales. Nuestro enfoque es interpretar regulaciones complejas,
+              identificar rutas viables y diseñar estrategias para desbloquear proyectos atrapados en conflictos regulatorios.
+              Trabajamos con propietarios, inversionistas y desarrolladores que enfrentan incertidumbre normativa.
             </p>
 
             <hr className="rule mb-8" />
@@ -236,7 +235,7 @@ function QuienesSomos() {
               </div>
               <div>
                 <p className="font-['Anek_Devanagari'] text-lg font-500 text-[#1C1C1C] mb-1">Miguel Meza Buzeta</p>
-                <p className="section-label mb-2">Arquitecto / Director</p>
+                <p className="section-label mb-2">Especialista en Destrabe Normativo</p>
                 <p className="font-['DM_Sans'] text-xs font-300 text-[#6A6A6A]">
                   Universidad de Artes y Ciencias de la Comunicación — UNIACC<br />
                   Dipl. B.I.M. / 2019
@@ -270,22 +269,20 @@ function NuestroRol() {
           <FadeBox delay={150} className="flex flex-col justify-center">
             <p className="section-label mb-3">02</p>
             <h2 className="font-['Anek_Devanagari'] text-3xl md:text-4xl font-400 text-[#1C1C1C] leading-tight mb-6">
-              Nuestro<br />Rol
+              Qué Resolvemos
             </h2>
             <p className="font-['DM_Sans'] text-sm font-300 text-[#3A3A3A] leading-relaxed mb-6">
-              Interpretar el territorio, articular normativa y estructura territorial,
-              y desarrollar estrategias de proyecto. El trabajo se basa en comprender
-              cómo las condiciones territoriales, las estructuras existentes y los
-              instrumentos de planificación interactúan en un lugar determinado.
+              Proyectos detenidos por normativa. Subdivisiones en zonas rurales. Conflictos con autoridades.
+              Incertidumbre sobre factibilidad. Evaluamos la viabilidad real de tu proyecto, identificamos rutas
+              posibles y diseñamos estrategias para desbloquear lo que está atrapado.
             </p>
             <p className="font-['DM_Sans'] text-sm font-300 text-[#3A3A3A] leading-relaxed mb-8">
-              Desde esa lectura surge el proyecto como una forma de ordenar,
-              articular o activar el territorio.
+              Nuestro enfoque es técnico, directo y basado en interpretación profunda de regulaciones.
+              Reducimos incertidumbre. Protegemos tu inversión. Desbloqueamos proyectos.
             </p>
             <div className="border-l-2 border-[#8A9A5B] pl-4">
               <p className="font-['Anek_Devanagari'] text-sm italic text-[#5A5A5A] leading-relaxed">
-                "Motor Territorial — una línea de reflexión y análisis que explora
-                la relación entre normativa, territorio y proyecto."
+                "Especialización en destrabe normativo. Evaluación de factibilidad. Estrategias de proyecto para contextos complejos."
               </p>
             </div>
           </FadeBox>
@@ -300,18 +297,18 @@ function Servicios() {
   const items = [
     {
       num: "A",
-      title: "Consultorías Territoriales y Urbanas",
-      desc: "Orientadas a comprender y estructurar el territorio como base para la toma de decisiones en proyectos urbanos y procesos de planificación. Incluye estudios territoriales, análisis normativos, estrategias urbanas y apoyo en procesos de planificación.",
+      title: "Evaluación Normativa Integral",
+      desc: "Análisis exhaustivo de instrumentos normativos (PRC, PRMS, OGUC, leyes especiales). Evaluación de factibilidad según normativa vigente. Identificación de conflictos, restricciones y excepciones. Informe técnico con conclusiones claras y recomendaciones.",
     },
     {
       num: "B",
-      title: "Proyectos Urbanos",
-      desc: "Desarrollo de proyectos de espacio público, paisajismo y diseño urbano. El trabajo territorial se desarrolla a través de colaboraciones interdisciplinarias que integran conocimientos y experiencias diversas.",
+      title: "Estrategia de Destrabe",
+      desc: "Diagnóstico del problema normativo. Análisis de rutas posibles (interpretación, excepción, cambio de zonificación). Evaluación de viabilidad de cada ruta. Propuesta de estrategia recomendada con probabilidad de éxito y roadmap de implementación.",
     },
     {
       num: "C",
-      title: "Motor Territorial",
-      desc: "Línea de reflexión y análisis que profundiza en la relación entre normativa, territorio y proyecto. Estudios, publicaciones y estrategias que articulan el territorio de manera coherente.",
+      title: "Gestión de Trámites Normativos",
+      desc: "Coordinación con autoridades (municipalidad, SEREMI, GORE). Preparación de documentación técnica. Seguimiento de expedientes. Negociación en caso de conflictos. Apoyo en recursos administrativos si es necesario.",
     },
   ];
 
@@ -329,10 +326,10 @@ function Servicios() {
           </FadeBox>
           <FadeBox delay={100}>
             <p className="font-['DM_Sans'] text-base font-300 text-[#3A3A3A] leading-relaxed">
-              Nuestro objetivo es interpretar el territorio para identificar oportunidades
-              de proyecto que surgen de su propia estructura. A partir de la lectura de la
-              normativa, las dinámicas territoriales y las condiciones existentes, buscamos
-              desarrollar estrategias y proyectos que articulen el territorio de manera coherente.
+              Nuestros servicios están diseñados para reducir incertidumbre normativa y desbloquear proyectos.
+              Desde evaluación inicial hasta gestión completa de trámites. Cada servicio incluye análisis técnico profundo,
+              estrategia clara y apoyo en implementación. Trabajamos con propietarios, inversionistas y desarrolladores
+              que enfrentan problemas normativos reales.
             </p>
           </FadeBox>
         </div>
@@ -356,31 +353,31 @@ const proyectos = [
   {
     id: 1,
     num: "01",
-    categoria: "Proyectos Urbanos",
-    titulo: "Proyecto Bicentenario",
-    subtitulo: "Campus Juan Gómez Millas",
-    mandante: "Iniciativa Bicentenario — Universidad de Chile",
-    descripcion: "Diseño de arquitectura y paisajismo en el Campus Juan Gómez Millas. Un proyecto que articula los espacios exteriores del campus con la vida universitaria y el entorno urbano.",
+    categoria: "Subdivisión Rural",
+    titulo: "Destrabe de Subdivisión",
+    subtitulo: "Zona Rural, Región de Valparaíso",
+    mandante: "Propietario privado",
+    descripcion: "Terreno de 5 hectáreas en zona rural con restricciones normativas. Evaluación de viabilidad, identificación de excepciones, negociación con municipalidad. Resultado: subdivisión aprobada en 8 semanas.",
     img: IMG_BICENTENARIO,
   },
   {
     id: 2,
     num: "02",
-    categoria: "Espacio Público",
-    titulo: "Parque Rosa Vicencio",
-    subtitulo: "Canela Alta, Región de Coquimbo",
-    mandante: "I.M. de Canela y SERVIU Coquimbo",
-    descripcion: "Proyecto de espacio público que integra la identidad local con el diseño contemporáneo de paisaje. Una intervención que activa el territorio desde sus propias condiciones.",
+    categoria: "Conflicto Regulatorio",
+    titulo: "Resolución de Rechazo SEREMI",
+    subtitulo: "Proyecto de Equipamiento Comunitario",
+    mandante: "Inversionista privado",
+    descripcion: "Proyecto rechazado por SEREMI. Análisis técnico del rechazo, identificación de error en interpretación, preparación de impugnación. Resultado: aprobación tras presentar argumentos técnicos en 6 semanas.",
     img: IMG_PARQUE,
   },
   {
     id: 3,
     num: "03",
-    categoria: "Concursos y Propuestas",
-    titulo: "Nuevo Parque para La Reina",
-    subtitulo: "Concurso Arquitectónico 2023",
-    mandante: "Concurso público — Santiago, Chile",
-    descripcion: "Propuesta para el diseño de un nuevo parque en la comuna de La Reina. Una exploración de nuevas ideas sobre el territorio y el diseño urbano a través del ejercicio concursal.",
+    categoria: "Pre-Evaluación",
+    titulo: "Evaluación de Viabilidad Antes de Inversión",
+    subtitulo: "Proyecto Inmobiliario en Evaluación",
+    mandante: "Inversionista inmobiliario",
+    descripcion: "Evaluación normativa integral antes de cierre de compra. Identificación de restricciones y oportunidades. Análisis de riesgo regulatorio. Resultado: inversionista procedió con confianza, proyecto ejecutado sin conflictos.",
     img: IMG_CONCURSO,
   },
 ];
@@ -397,14 +394,14 @@ function Portafolio() {
           <FadeBox>
             <p className="section-label text-[#8A9A5B] mb-3">04</p>
             <h2 className="font-['Anek_Devanagari'] text-3xl md:text-4xl font-400 text-white leading-tight">
-              Portafolio
+              Casos de Éxito
             </h2>
           </FadeBox>
           <FadeBox delay={100}>
             <p className="font-['DM_Sans'] text-base font-300 text-white/60 leading-relaxed">
-              Los proyectos urbanos desarrollados durante los últimos años hoy forman parte del
-              entorno construido. Su materialización permite observar cómo el análisis territorial
-              y la propuesta de proyecto se traducen en espacios reales dentro de la ciudad.
+              Proyectos desbloqueados. Subdivisiones aprobadas. Conflictos resueltos.
+              Estos casos muestran cómo el análisis normativo profundo y la estrategia clara
+              transforman proyectos detenidos en realidad ejecutada.
             </p>
           </FadeBox>
         </div>
@@ -471,15 +468,13 @@ function Alianzas() {
           </FadeBox>
           <FadeBox delay={100}>
             <p className="font-['DM_Sans'] text-base font-300 text-[#3A3A3A] leading-relaxed mb-8">
-              La experiencia acumulada durante los últimos años incluye el desarrollo de estudios,
-              consultorías y proyectos urbanos realizados para distintas oficinas, instituciones
-              y clientes en Chile y en el extranjero. El trabajo territorial se desarrolla a
-              través de colaboraciones con distintos profesionales y organizaciones, integrando
-              conocimientos y experiencias que permiten abordar cada proyecto desde una mirada
-              interdisciplinaria.
+              Trabajamos con propietarios, inversionistas, desarrolladores y asesores que enfrentan problemas normativos reales.
+              Nuestro equipo tiene experiencia en interpretación regulatoria, negociación con autoridades y resolución de conflictos.
+              Cada proyecto es diferente. Cada contexto es único. Por eso nuestro enfoque es siempre personalizado y basado en
+              análisis técnico profundo.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {["Universidad de Chile", "SERVIU Coquimbo", "I.M. de Canela", "Concursos Públicos"].map((org) => (
+              {["Propietarios Rurales", "Inversionistas Inmobiliarios", "Desarrolladores", "Asesores Legales"].map((org) => (
                 <div key={org} className="border border-[#C8C5BC] px-4 py-3">
                   <p className="font-['DM_Sans'] text-xs font-400 text-[#5A5A5A] leading-snug">{org}</p>
                 </div>
@@ -506,7 +501,7 @@ function Contacto() {
               Contacto
             </h2>
             <p className="font-['Anek_Devanagari'] text-lg italic text-[#8A9A5B]">
-              Ideas — Estrategias — Soluciones.
+              Destrabe Normativo. Evaluación de Factibilidad. Reducción de Riesgo.
             </p>
           </FadeBox>
 
@@ -589,14 +584,14 @@ function Contacto() {
                 <textarea
                   required
                   rows={4}
-                  placeholder="Cuéntenos sobre su proyecto o consulta..."
+                  placeholder="Cuéntenos sobre tu proyecto o problema normativo..."
                   className="bg-transparent border border-[#C8C5BC] px-4 py-3 font-['DM_Sans'] text-sm font-300 text-[#1C1C1C] placeholder:text-[#A0A0A0] focus:outline-none focus:border-[#8A9A5B] transition-colors resize-none"
                 />
               </div>
               <div className="md:col-span-2">
                 <button
                   type="submit"
-                  className="flex items-center gap-2 bg-[#1C1C1C] text-white font-['DM_Sans'] text-xs font-500 tracking-[0.12em] uppercase px-8 py-4 hover:bg-[#8A9A5B] transition-colors duration-300"
+                  className="flex items-center gap-2 bg-[#8A9A5B] text-white font-['DM_Sans'] text-xs font-500 tracking-[0.12em] uppercase px-8 py-4 hover:bg-[#7A8A4B] transition-colors duration-300"
                 >
                   Enviar Mensaje <ArrowRight size={14} />
                 </button>
