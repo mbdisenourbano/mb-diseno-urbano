@@ -555,7 +555,7 @@ function CasosExito() {
       subtitulo: "Uso y Consolidación del Predio",
       desc: "Análisis de viabilidad para consolidación habitacional con mejoras según normativa vigente. Evaluación de restricciones, definición de estrategia de desarrollo.",
       resultado: "Proyecto viable con ruta clara de ejecución",
-      img: null
+      img: "/manus-storage/BASEELTOTORAL_45829259.png"
     },
     {
       num: "03",
@@ -592,17 +592,16 @@ function CasosExito() {
             <FadeBox key={caso.num} delay={i * 100} className={`border border-[#D8D5CC] overflow-hidden hover:border-[#8A9A5B] transition-colors ${
               caso.num === "02" ? "" : ""
             }`}>
-              {caso.num !== "02" ? (
-                caso.img && (
-                  <div className="relative aspect-[3/2] overflow-hidden bg-[#ECEAE3]">
-                    <img
-                      src={caso.img}
-                      alt={caso.titulo}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                )
-              ) : (
+              {caso.img && (
+                <div className="relative aspect-[3/2] overflow-hidden bg-[#ECEAE3]">
+                  <img
+                    src={caso.img}
+                    alt={caso.titulo}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              )}
+              {!caso.img && (
                 <div className="relative aspect-[3/2] overflow-hidden bg-[#ECEAE3]"></div>
               )}
               <div className={`${caso.num === "02" ? "p-6" : "p-6"}`}>
