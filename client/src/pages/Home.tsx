@@ -176,13 +176,13 @@ function Hero() {
           <div className="flex items-center gap-6">
             <button
               onClick={() => document.querySelector("#problemas")?.scrollIntoView({ behavior: "smooth" })}
-              className="flex items-center gap-2 bg-[#8A9A5B] text-white font-['DM_Sans'] text-xs font-500 tracking-[0.12em] uppercase px-6 py-3 hover:bg-[#7A8A4B] transition-colors duration-200"
+              className="flex items-center gap-2 bg-[#8A9A5B] text-white font-['DM_Sans'] text-xs font-500 tracking-[0.12em] uppercase px-6 py-3 hover:bg-[#7A8A4B] hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer"
             >
               ¿Cuál es tu problema? <ArrowRight size={14} />
             </button>
             <button
               onClick={() => document.querySelector("#contacto")?.scrollIntoView({ behavior: "smooth" })}
-              className="font-['DM_Sans'] text-xs font-400 tracking-[0.12em] uppercase text-white/80 hover:text-white border-b border-white/40 hover:border-white pb-0.5 transition-colors duration-200"
+              className="font-['DM_Sans'] text-xs font-400 tracking-[0.12em] uppercase text-white/80 hover:text-white border-b border-white/40 hover:border-white pb-0.5 transition-all duration-300 cursor-pointer hover:translate-x-1"
             >
               Agenda Reunión
             </button>
@@ -785,7 +785,7 @@ function Contacto() {
               <div className="md:col-span-2">
                 <button
                   type="submit"
-                  className="flex items-center gap-2 bg-[#8A9A5B] text-white font-['DM_Sans'] text-xs font-500 tracking-[0.12em] uppercase px-8 py-4 hover:bg-[#7A8A4B] transition-colors duration-300"
+                  className="flex items-center gap-2 bg-[#8A9A5B] text-white font-['DM_Sans'] text-xs font-500 tracking-[0.12em] uppercase px-8 py-4 hover:bg-[#7A8A4B] hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer"
                 >
                   Enviar Mensaje <ArrowRight size={14} />
                 </button>
