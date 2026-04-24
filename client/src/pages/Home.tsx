@@ -14,7 +14,7 @@ const LOGO_BLACK = "/manus-storage/logo_mb_black_0cdc6a1c.png";
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663589322188/7nMPGwPPB7PYAMQiJH4cxH/hero_bg-dxN2NH3PD2UjnEzYEb38bp.webp";
 const IMG_TERRITORIO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663589322188/7nMPGwPPB7PYAMQiJH4cxH/territorio_abstract-M2omtEJeBciAa8eCtqEDNb.webp";
 const CASO_HUALLILEMU = "/manus-storage/CASOHUALLILEMU_6e2fd7aa.webp";
-const CASO_CARDONAL = "/manus-storage/CASOELCARDONAL_92aa9849.png";
+const CASO_CARDONAL = "/manus-storage/BASEELCARDONAL_241558cd.png";
 
 // ─── Fade-in hook ──────────────────────────────────────────────────────────────
 function useFadeIn() {
