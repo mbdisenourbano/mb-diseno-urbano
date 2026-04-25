@@ -9,12 +9,12 @@ import { useEffect, useRef, useState } from "react";
 import { Mail, Phone, MapPin, ArrowRight, Menu, X, CheckCircle2, Star } from "lucide-react";
 
 // ─── Image URLs ────────────────────────────────────────────────────────────────
-const LOGO_WHITE = "/manus-storage/logo_mb_d0d02ff8.png";
-const LOGO_BLACK = "/manus-storage/logo_mb_black_0cdc6a1c.png";
+const LOGO_WHITE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663589322188/NwiujzaVSeodqYKb.png";
+const LOGO_BLACK = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663589322188/VlbuOwQVCwTJfoOI.png";
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663589322188/7nMPGwPPB7PYAMQiJH4cxH/hero_bg-dxN2NH3PD2UjnEzYEb38bp.webp";
 const IMG_TERRITORIO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663589322188/7nMPGwPPB7PYAMQiJH4cxH/territorio_abstract-M2omtEJeBciAa8eCtqEDNb.webp";
-const CASO_HUALLILEMU = "/manus-storage/CASOHUALLILEMU_6e2fd7aa.webp";
-const CASO_CARDONAL = "/manus-storage/BASEELCARDONAL_241558cd.png";
+const CASO_HUALLILEMU = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663589322188/NlTJHFNdBECrgDov.png";
+const CASO_CARDONAL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663589322188/nszZJezEHwFZkyvS.png";
 
 // ─── Fade-in hook ──────────────────────────────────────────────────────────────
 function useFadeIn() {
